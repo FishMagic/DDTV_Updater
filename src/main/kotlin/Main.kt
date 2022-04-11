@@ -13,8 +13,6 @@ import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.security.MessageDigest
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
@@ -85,7 +83,7 @@ suspend fun updaterUser() {
       "$updateHost$type/$osType/$key"
     }
     println("开始下载$key")
-    MainScope().launch {
+    runBlocking {
       downloadFile(httpClient, downloadURL, file)
     }
     println("${key}下载完成")
