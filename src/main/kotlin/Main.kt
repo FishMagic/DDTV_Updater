@@ -2,12 +2,8 @@ import io.ktor.client.HttpClient
 import io.ktor.client.call.body
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.request.get
-import io.ktor.client.request.prepareGet
-import io.ktor.http.contentLength
+import io.ktor.http.Url
 import io.ktor.serialization.kotlinx.json.json
-import io.ktor.utils.io.ByteReadChannel
-import io.ktor.utils.io.core.isNotEmpty
-import io.ktor.utils.io.core.readBytes
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -17,22 +13,21 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.Serializable
+import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.encodeToStream
 
 
 @Serializable
 data class Dict(
-  val dict: MutableMap<String, Dict> = mutableMapOf(),
-  val file: MutableMap<String, String> = mutableMapOf()
+  val dict: MutableMap<String, Dict> = mutableMapOf(), val file: MutableMap<String, String> = mutableMapOf()
 )
 
-const val updateHost = "https://fishmagic.github.io/DDTV_Updater/releases/"
+const val updateHost = "https://raw.githubusercontent.com/FishMagic/DDTV_Updater/master/releases/"
 
 val whiteListFile = listOf(".type", "config.json", "DDTV_Upgrader", "DDTV_Upgrader.bat")
 val whiteListDict = listOf("lib/", "log/")
 
-@OptIn(ExperimentalSerializationApi::class)
 fun main(args: Array<String>) {
   runBlocking {
     if (args.size >= 4 && args[0] == "dev") {
@@ -63,8 +58,9 @@ suspend fun updaterUser() {
     }
   }
   println("开始下载文件摘要信息")
-  val remoteDict: Dict =
+  val remoteDictString: String =
     withContext(Dispatchers.IO) { httpClient.get(updateHost + type + "/sha256-${osType}.json").body() }
+  val remoteDict = Json.decodeFromString<Dict>(remoteDictString)
   println("文件摘要信息下载成功")
   println("开始计算本地文件摘要信息")
   val localDict = calcSHA256()
@@ -77,11 +73,12 @@ suspend fun updaterUser() {
     if (!file.exists()) {
       file.createNewFile()
     }
-    val downloadURL = if (key.indexOf("app") != -1 && key.indexOf("app") < key.indexOf("/")) {
+    val downloadPath = if (key.indexOf("app") != -1 && key.indexOf("app") < key.indexOf("/")) {
       "$updateHost$type/$key"
     } else {
       "$updateHost$type/$osType/$key"
     }
+    val downloadURL = Url(downloadPath.replace(" ", "%20"))
     println("开始下载$key")
     runBlocking {
       downloadFile(httpClient, downloadURL, file)
@@ -95,7 +92,7 @@ suspend fun updaterDEV(args: Array<String>) {
   val typeFile = File(args[1])
   println("正在生成通用文件摘要")
   var dict = Dict()
-  dict.dict["app"] = calcSHA256(java.io.File(typeFile, "app"))
+  dict.dict["app"] = calcSHA256(File(typeFile, "app"))
   println("通用文件摘要生成完成")
   println("正在生成平台文件摘要")
   dict = calcSHA256(File(typeFile, args[2]), dict)
@@ -126,35 +123,25 @@ suspend fun updaterDEV(args: Array<String>) {
   println("摘要记录文件记录完成")
 }
 
-suspend fun downloadFile(httpClient: HttpClient, url: String, file: File) {
+suspend fun downloadFile(httpClient: HttpClient, url: Url, file: File) {
   withContext(Dispatchers.IO) {
-    httpClient.prepareGet(url).execute {
-      val channel: ByteReadChannel = it.body()
-      while (!channel.isClosedForRead) {
-        val pack = channel.readRemaining()
-        if (pack.isNotEmpty) {
-          val bytes = pack.readBytes()
-          file.appendBytes(bytes)
-          print("下载进度： ${file.length()}/${it.contentLength()}\r")
-        }
-      }
-    }
+    file.delete()
+    file.createNewFile()
+    val fileByteArray: ByteArray = httpClient.get(url).body()
+    file.appendBytes(fileByteArray)
   }
 }
 
 suspend fun checkUpdateFile(
-  remoteDict: Dict,
-  localDict: Dict,
-  dictName: String = "",
-  updateMap: MutableMap<String, File> = mutableMapOf()
+  remoteDict: Dict, localDict: Dict, dictName: String = "", updateMap: MutableMap<String, File> = mutableMapOf()
 ): MutableMap<String, File> {
-  withContext(Dispatchers.Default) {
+  withContext(Dispatchers.IO) {
     localDict.file.forEach { (key, file) ->
       val remoteFile = remoteDict.file[key]
       val fileName = "$dictName$key"
       if (remoteFile == null) {
         if (fileName !in whiteListFile) {
-          File(dictName, file).delete()
+          File(fileName).delete()
           println("已删除$fileName")
         }
       } else {
@@ -171,7 +158,7 @@ suspend fun checkUpdateFile(
       val childDictName = "$dictName$key/"
       if (childRemoteDict == null) {
         if (childDictName !in whiteListDict) {
-          File(dictName, dictName).delete()
+          delDict(File(childDictName))
           println("已删除$dictName$key")
         }
       } else {
@@ -184,14 +171,31 @@ suspend fun checkUpdateFile(
       updateMap[fileName] = File(fileName)
     }
     remoteDict.dict.forEach { (key, dict) ->
+      val childDictName = "$dictName$key/"
+      val childDict = File(childDictName)
+      if (!childDict.exists()) {
+        childDict.mkdir()
+      }
       checkUpdateFile(dict, Dict(), "$dictName$key/", updateMap)
     }
   }
   return updateMap
 }
 
+suspend fun delDict(dict: File) {
+  withContext(Dispatchers.IO) {
+    dict.listFiles()?.forEach { file ->
+      if (file.isFile) {
+        file.delete()
+      } else {
+        delDict(file)
+      }
+    }
+  }
+}
+
 suspend fun calcSHA256(path: File = File("."), pathDict: Dict = Dict()): Dict {
-  print("进入目录${path.path}")
+  println("进入目录${path.path}")
   path.listFiles()?.forEach {
     if (it.isDirectory) {
       println("发现目录${it.name}")
@@ -207,7 +211,9 @@ suspend fun calcSHA256(path: File = File("."), pathDict: Dict = Dict()): Dict {
 suspend fun sha256(file: File): String {
   return withContext(Dispatchers.Default) {
     val digest = MessageDigest.getInstance("SHA-256")
-    val result = digest.digest(file.readBytes())
+    val byteArray = file.readBytes()
+    val filterArray = byteArray.filter { it != '\r'.code.toByte() }
+    val result = digest.digest(filterArray.toByteArray())
     buildString {
       result.forEach {
         val hexString = Integer.toHexString(it.toInt() and (0xff))
