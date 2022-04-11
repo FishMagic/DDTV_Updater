@@ -90,10 +90,12 @@ suspend fun updaterUser() {
   }
 }
 
+@OptIn(ExperimentalSerializationApi::class)
 suspend fun updaterDEV(args: Array<String>) {
   val typeFile = File(args[1])
   println("正在生成通用文件摘要")
-  var dict = calcSHA256(File(typeFile, "app"))
+  var dict = Dict()
+  dict.dict["app"] = calcSHA256(java.io.File(typeFile, "app"))
   println("通用文件摘要生成完成")
   println("正在生成平台文件摘要")
   dict = calcSHA256(File(typeFile, args[2]), dict)
@@ -189,10 +191,13 @@ suspend fun checkUpdateFile(
 }
 
 suspend fun calcSHA256(path: File = File("."), pathDict: Dict = Dict()): Dict {
+  print("进入目录${path.path}")
   path.listFiles()?.forEach {
     if (it.isDirectory) {
+      println("发现目录${it.name}")
       pathDict.dict[it.name] = calcSHA256(it)
     } else {
+      println("发现文件${it.name}")
       pathDict.file[it.name] = sha256(it)
     }
   }
