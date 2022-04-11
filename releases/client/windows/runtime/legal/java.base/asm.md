@@ -1,7 +1,6 @@
 ## ASM Bytecode Manipulation Framework v8.0.1
 
 ### ASM License
-
 <pre>
 
 Copyright (c) 2000-2011 France Télécom

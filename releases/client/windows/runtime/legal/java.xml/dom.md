@@ -1,7 +1,6 @@
 ## DOM Level 3 Core Specification v1.0
 
 ### W3C License
-
 <pre>
 
 W3C SOFTWARE NOTICE AND LICENSE

@@ -29,7 +29,7 @@ data class Dict(
   val file: MutableMap<String, String> = mutableMapOf()
 )
 
-const val updateHost = "https://ddtv-upgrade-fishmagic.pages.dev/releases/"
+const val updateHost = "https://fishmagic.github.io/DDTV_Updater/releases/"
 
 val whiteListFile = listOf(".type", "config.json", "DDTV_Upgrader", "DDTV_Upgrader.bat")
 val whiteListDict = listOf("lib")
@@ -107,7 +107,7 @@ suspend fun updaterDEV(args: Array<String>) {
       versionFile.createNewFile()
     }
     val versionFOS = FileOutputStream(versionFile)
-    versionFOS.write(args[2].toByteArray())
+    versionFOS.write(args[3].toByteArray())
     versionFOS.flush()
     versionFOS.close()
   }

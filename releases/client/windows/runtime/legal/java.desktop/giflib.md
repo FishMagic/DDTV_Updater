@@ -1,7 +1,6 @@
 ## GIFLIB v5.2.1
 
 ### GIFLIB License
-
 ```
 
 The GIFLIB distribution is Copyright (c) 1997  Eric S. Raymond

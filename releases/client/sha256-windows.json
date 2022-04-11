@@ -139,8 +139,8 @@
             }
           },
           "file": {
-            "logging.properties": "0601d43aba712c156936b7b126a22d5e8459981e5bcf6f984e8b2ee718ab5f42",
-            "net.properties": "85616a3ac7d8207f8cff36083297a596fc580e5b8a9aa713acbec73513c15625",
+            "logging.properties": "3fc904b4fc61a31df641b06e772514505af8721012bdd743661a1334243f1872",
+            "net.properties": "d6529e9305fbdb17f1a125aa90d482c75c814e92d74502c6a253f534d0bf7a62",
             "sound.properties": "299c2360b6155eb28990ec49cd21753f97e43442fe8fab03e04f3e213df43a66"
           }
         },
@@ -154,13 +154,13 @@
                 "ASSEMBLY_EXCEPTION": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb",
                 "c-libutl.md": "bef40679922d6fdfb7e4ddb223ad6722300f6054ba737bbf6188d60fcec517f9",
                 "cldr.md": "48880d890ccabc4ed826f01fd3f7edd13c161271022b97bca1e6f2b2157bb3fe",
-                "epl-2.0.html": "928c4a6af7e9cf82589e560f98ffbb6ade7385b59fec8cb4ef36a6bb91cf7018",
+                "epl-2.0.html": "b5022ace0663c31ad1a481cd1624b18686ebe6413f8013398fab2e685c2bc95b",
                 "icu.md": "af0057e8553906083f69c2fb9fe9ed4ae8bc2340a0b1e376a424702f00300b29",
                 "LICENSE": "8c544e69195359f5bc962dbcca75d0c3aaa71b7c81149e5ff3694db72bc02678",
                 "openj9-notices": "fb70ea160022d2cd7024c56c340ae9b743a798bb43091c1b10da70bd27de58f5",
                 "openj9-openjdk-notices": "f2c8013dc866199c1a12f12e9162a4859e18801d9339703333c943e3afa6b343",
                 "public_suffix.md": "d9ed58c3132c2c8e82b095eb4ce24cafd1f20531c16a7c9d01f2134843904db7",
-                "unicode.md": "5e4e6623a21a63f9bc16ea54af4133b8038e490c0d499a74676f9e5a61b9c5b2",
+                "unicode.md": "b207a2e1229057a3ad5c194eb9b7569d3b1277c4cddfe0191a2d208a3d841cd6",
                 "zlib.md": "19abd401bac9af9b3e34c07e226de1e6f2c1f0806ffcdc3fe2f1ad5855a42ff8"
               }
             },
@@ -176,7 +176,7 @@
                 "ADDITIONAL_LICENSE_INFO": "ebf9777bd307ed789ceabf282a9aca168c391c7f48e15a60939352efb3ea33f9",
                 "ASSEMBLY_EXCEPTION": "b998cda101e5a1ebcfb5ff9cddd76ed43a2f2169676592d428b7c0d780665f2a",
                 "colorimaging.md": "04d61e3e8e71dd452ebe52008af5378d9f6640d14578aeb515dc5375973b0189",
-                "freetype.md": "dbc0ebeef2b03e68050afbc95232fb97311480a18e914d99034c45981806e82a",
+                "freetype.md": "27f171aa593c0284004f3d9fb17c726bdc30378dcc1c0c549e84d3d30b407265",
                 "giflib.md": "c8b99f33890887d27ad56fba9edd8ebbc668cfe0689168505a95613d1d4b32f8",
                 "harfbuzz.md": "7ca885b400a942f8ba12958a88266c2784c73c86e1f588eec7c79b8c556fadc1",
                 "jpeg.md": "580be596216ee11e2554b24ce944973acaede2ebf5ffba34a6bd8cc441c05043",
@@ -216,7 +216,7 @@
               "file": {
                 "ADDITIONAL_LICENSE_INFO": "ebf9777bd307ed789ceabf282a9aca168c391c7f48e15a60939352efb3ea33f9",
                 "ASSEMBLY_EXCEPTION": "b998cda101e5a1ebcfb5ff9cddd76ed43a2f2169676592d428b7c0d780665f2a",
-                "ecc.md": "042d98a257b9837ec0f95c853c9d55b2961e974b10f23cef23239993c4acaab0",
+                "ecc.md": "ffa06dacd5514df72fac47629e5ee49365a2963e73833edfdb1d36c17f949838",
                 "LICENSE": "86e0516b888276a492b19f9a84f5a866ed36925fae1510b3a94a0b6213e69192"
               }
             }
@@ -268,7 +268,7 @@
             "modules": "615a93e1425e2ad4cddab02a1041a41f1cfa2856fdcd903c38287d46a5075f6e",
             "options.default": "2458567681067d7619dc995df3423d1563f7ba2f75aa976481097e25eb0b464f",
             "psfont.properties.ja": "5a4bd51b969bf187ff86d94f4a71fdfbfa602762975fa3c73d264b4575f7c78f",
-            "psfontj2d.properties": "780c565d5af3ee6f68b887b75c041cdf46a0592f67012f12eeb691283e92630a",
+            "psfontj2d.properties": "b95efb13ef5934cf34c4737a3c90f45a2c31ac8d901b97bca77dc924ed587221",
             "tzdb.dat": "0fd049816c99a6d1dfb517fbcf32ca345dd134e971415859057e45e28d031d50",
             "tzmappings": "c16ae3fa1993e297df14352209c56751d4e67d99b6769558160f292298b21e62"
           }
@@ -284,10 +284,8 @@
     "animation-core-desktop-1.2.0-alpha01-dev620-7676605128559c417e7dcd14460b63b.jar": "f6f7465c30aebcf8a904206f729c5cfcd8685d68f5ccf4655eb9e82f47250389",
     "animation-desktop-1.2.0-alpha01-dev620-4345d8742ffb72ab4859f6cefefd4d3.jar": "4306beb49e6b7b5214dd72ec446c891953abfcc35be3bbb9e0dd2cded60f8a59",
     "annotations-13.0-f4fb462172517b46b6cd900358515a.jar": "ace2a10dc8e2d5fd34925ecac03e4988b2c0f851650c94b8cef49ba1bd111478",
-    "common-desktop-1.0-5a131bfc9254e5c5781071fde2d3b161.jar": "63e22189f90761ba6c78bff24187afa4b9867dd2fad9d1a357b3f16fb9228ccf",
-    "common-desktop-1.0-f54d8554c56ff0344d5eaa855d6308a.jar": "243177fafcb15b7a322060d5d0a2eef7e0dacce537f7b0bec21e569bc0d59d16",
-    "DDTV Client.cfg": "448775e872b8e9a9ed411c8d7d215ab3b9822946bd12408a4877f03893811be6",
-    "desktop-jvm-1.0-2dfc5c3a47d9ed52956d68c90da3e9d.jar": "e49453cbf63799b43e46787e05b2ccbd7b750baead0f659f32dac0f4da03a92c",
+    "common-desktop-1.0-ef1dfa376f8bcdb8eff75a748a9d2ab.jar": "a5285739b76562eb6591749f06d0a9a7c25f3c9dc500d15e05d40ece84628860",
+    "DDTV Client.cfg": "3a84ac3cb218dcdaf9bd850a4ac54299662cb913390b38a84d5348ad429554ab",
     "desktop-jvm-1.0-b14af747ffdddccfe32ea54c8add928d.jar": "9ca87b9914a54dec1784d602eafd6d73b3511f56afb168f2ac42b5a7d0c6221f",
     "desktop-jvm-1.1.1-a0fb36d5ce8399d2836e3e8fb6f5737e.jar": "c898b5cb62c45c06a22c3153b7511a9037e190709ccdcd50d50f3d000732da37",
     "foundation-desktop-1.2.0-alpha01-dev620-4ff78ead43f223d3df9bb52874baf56.jar": "2e340add72a04b2778fe044633bd52906a8bb8d74fcf79a4af236d25a91d80c1",

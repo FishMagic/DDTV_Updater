@@ -1,7 +1,6 @@
 ## libpng v1.6.37
 
 ### libpng License
-
 <pre>
 
 COPYRIGHT NOTICE, DISCLAIMER, and LICENSE

@@ -18,7 +18,6 @@ which fits your needs best.
 ```
 
 ### FreeType License
-
 ```
                    The FreeType Project LICENSE
                     ----------------------------

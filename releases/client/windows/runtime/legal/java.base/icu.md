@@ -1,7 +1,6 @@
 ## International Components for Unicode (ICU4J) v67.1
 
 ### ICU4J License
-
 ```
 
 COPYRIGHT AND PERMISSION NOTICE (ICU 58 and later)

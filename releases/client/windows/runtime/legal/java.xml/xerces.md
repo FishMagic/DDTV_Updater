@@ -1,7 +1,6 @@
 ## Apache Xerces v2.12.1
 
 ### Apache Xerces Notice
-
 <pre>
     =========================================================================
     == NOTICE file corresponding to section 4(d) of the Apache License,    ==
@@ -23,7 +22,6 @@
 </pre>
 
 ### Apache 2.0 License
-
 <pre>
 
                               Apache License

@@ -20,7 +20,6 @@ removing:
 ```
 
 #### Mozilla ECC Library Removal Impact
-
 ```
 The Java Cryptographic Service SunEC Provider uses the Mozilla ECC library.  If 
 this native library is removed, the following algorithms will no longer be 
@@ -68,7 +67,6 @@ product model.
 ```
 
 ### Mozilla ECC License
-
 ```
 Software distributed under the License is distributed on an "AS IS" basis,
 WITHOUT WARRANTY OF ANY KIND, either express or implied. See the License
@@ -91,7 +89,6 @@ Version 2.1.
 ```
 
 #### LGPL 2.1
-
 ```
                   GNU LESSER GENERAL PUBLIC LICENSE
                        Version 2.1, February 1999
