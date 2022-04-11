@@ -26,7 +26,7 @@ data class Dict(
 const val updateHost = "https://raw.githubusercontent.com/FishMagic/DDTV_Updater/master/releases/"
 
 val whiteListFile = listOf(".type", "config.json", "DDTV_Upgrader", "DDTV_Upgrader.bat")
-val whiteListDict = listOf("lib/", "log/")
+val whiteListDict = listOf("lib/", "log/", "runtime/")
 
 fun main(args: Array<String>) {
   runBlocking {
