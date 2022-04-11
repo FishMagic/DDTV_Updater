@@ -5,12 +5,12 @@
         "resources": {}
       },
       "file": {
-        ".jpackage.xml": "3f62beeaff9cc9bb54486c04c37447b2dd7cb7e9921d9a82483fdff428c37afb",
+        ".jpackage.xml": "5aee7c55895e81d95370410a7d65582b44a369d4069731cb593345b938a559c2",
         "animation-core-desktop-1.2.0-alpha01-dev620-7676605128559c417e7dcd14460b63b.jar": "940edbe626429cd2b9dd1222a4020d24b27eebe3bf186244494e32c7aa306f03",
         "animation-desktop-1.2.0-alpha01-dev620-4345d8742ffb72ab4859f6cefefd4d3.jar": "ca1c8a8be3505bf6b231822444197fc0356b2bf3d227ccd6459abdccda70c6c3",
         "annotations-13.0-f4fb462172517b46b6cd900358515a.jar": "23ee9b25ff017e102112f27b689bf771404e714778a679c4b3ad34d51c85bb95",
-        "common-desktop-1.0-ef1dfa376f8bcdb8eff75a748a9d2ab.jar": "1527819c2dbdf896e8d376db04a174dfb9a83d09e9486faeaf0af93acd418ba4",
-        "DDTV Client.cfg": "ebd91177f8c33a9ccfe66e92c8c43edf830a1ce5acda65e7547c416aeaa6f96c",
+        "common-desktop-1.0-995343a4888d065be9b5ebf6de0db15.jar": "cc0d723acc4b0bf2e8136d97484c5ab48d57dad59370078047caced9bdaea7ca",
+        "DDTV Client.cfg": "4f1c9dab0a3dad197a360c8aff9a5b0ddcd83a1cdbdc56e8565e29ef144eb4af",
         "desktop-jvm-1.0-b14af747ffdddccfe32ea54c8add928d.jar": "e9c14756500fc4ed4e501c985c9b4a78e322fef9678e0a8616528d2421234096",
         "desktop-jvm-1.1.1-a0fb36d5ce8399d2836e3e8fb6f5737e.jar": "f75b7695617f39ecb3bfcb7bd6093091696107b5e0d9e77f9060a6f2e99656ff",
         "foundation-desktop-1.2.0-alpha01-dev620-4ff78ead43f223d3df9bb52874baf56.jar": "f8bd3964dbdc5fc41ea36011171f6ec35083f2d826613e5b066bed923802f704",
@@ -196,8 +196,8 @@
             }
           },
           "file": {
-            "logging.properties": "3fc904b4fc61a31df641b06e772514505af8721012bdd743661a1334243f1872",
-            "net.properties": "d6529e9305fbdb17f1a125aa90d482c75c814e92d74502c6a253f534d0bf7a62",
+            "logging.properties": "0601d43aba712c156936b7b126a22d5e8459981e5bcf6f984e8b2ee718ab5f42",
+            "net.properties": "85616a3ac7d8207f8cff36083297a596fc580e5b8a9aa713acbec73513c15625",
             "sound.properties": "299c2360b6155eb28990ec49cd21753f97e43442fe8fab03e04f3e213df43a66"
           }
         },
@@ -211,13 +211,13 @@
                 "ASSEMBLY_EXCEPTION": "a44eb7b5caf5534c6ef536b21edb40b4d6babf91bf97d9d45596868618b2c6fb",
                 "c-libutl.md": "bef40679922d6fdfb7e4ddb223ad6722300f6054ba737bbf6188d60fcec517f9",
                 "cldr.md": "48880d890ccabc4ed826f01fd3f7edd13c161271022b97bca1e6f2b2157bb3fe",
-                "epl-2.0.html": "b5022ace0663c31ad1a481cd1624b18686ebe6413f8013398fab2e685c2bc95b",
+                "epl-2.0.html": "928c4a6af7e9cf82589e560f98ffbb6ade7385b59fec8cb4ef36a6bb91cf7018",
                 "icu.md": "af0057e8553906083f69c2fb9fe9ed4ae8bc2340a0b1e376a424702f00300b29",
                 "LICENSE": "8c544e69195359f5bc962dbcca75d0c3aaa71b7c81149e5ff3694db72bc02678",
                 "openj9-notices": "fb70ea160022d2cd7024c56c340ae9b743a798bb43091c1b10da70bd27de58f5",
                 "openj9-openjdk-notices": "f2c8013dc866199c1a12f12e9162a4859e18801d9339703333c943e3afa6b343",
                 "public_suffix.md": "d9ed58c3132c2c8e82b095eb4ce24cafd1f20531c16a7c9d01f2134843904db7",
-                "unicode.md": "b207a2e1229057a3ad5c194eb9b7569d3b1277c4cddfe0191a2d208a3d841cd6",
+                "unicode.md": "5e4e6623a21a63f9bc16ea54af4133b8038e490c0d499a74676f9e5a61b9c5b2",
                 "zlib.md": "19abd401bac9af9b3e34c07e226de1e6f2c1f0806ffcdc3fe2f1ad5855a42ff8"
               }
             },
@@ -233,7 +233,7 @@
                 "ADDITIONAL_LICENSE_INFO": "31cf9d68e91f003b1d332f2a7517c3439e1a6571ff9dc4b740122a53cdcd4f5d",
                 "ASSEMBLY_EXCEPTION": "619a29daab4a59e606c31d43bbd3c80dae8cc496559b353b74d85bea91f134ba",
                 "colorimaging.md": "04d61e3e8e71dd452ebe52008af5378d9f6640d14578aeb515dc5375973b0189",
-                "freetype.md": "27f171aa593c0284004f3d9fb17c726bdc30378dcc1c0c549e84d3d30b407265",
+                "freetype.md": "dbc0ebeef2b03e68050afbc95232fb97311480a18e914d99034c45981806e82a",
                 "giflib.md": "c8b99f33890887d27ad56fba9edd8ebbc668cfe0689168505a95613d1d4b32f8",
                 "harfbuzz.md": "7ca885b400a942f8ba12958a88266c2784c73c86e1f588eec7c79b8c556fadc1",
                 "jpeg.md": "580be596216ee11e2554b24ce944973acaede2ebf5ffba34a6bd8cc441c05043",
@@ -273,7 +273,7 @@
               "file": {
                 "ADDITIONAL_LICENSE_INFO": "31cf9d68e91f003b1d332f2a7517c3439e1a6571ff9dc4b740122a53cdcd4f5d",
                 "ASSEMBLY_EXCEPTION": "619a29daab4a59e606c31d43bbd3c80dae8cc496559b353b74d85bea91f134ba",
-                "ecc.md": "ffa06dacd5514df72fac47629e5ee49365a2963e73833edfdb1d36c17f949838",
+                "ecc.md": "042d98a257b9837ec0f95c853c9d55b2961e974b10f23cef23239993c4acaab0",
                 "LICENSE": "9e4ffc186121534972af9be8632e57b2b2f3cf203a10f2205e5814120f2b5bfb"
               }
             }
@@ -325,7 +325,7 @@
             "modules": "971ac8f5e2aa2ab94aa7356e7663e594ccd976766a9ab1048b1e505bfef6e7a5",
             "options.default": "2458567681067d7619dc995df3423d1563f7ba2f75aa976481097e25eb0b464f",
             "psfont.properties.ja": "5a4bd51b969bf187ff86d94f4a71fdfbfa602762975fa3c73d264b4575f7c78f",
-            "psfontj2d.properties": "b95efb13ef5934cf34c4737a3c90f45a2c31ac8d901b97bca77dc924ed587221",
+            "psfontj2d.properties": "780c565d5af3ee6f68b887b75c041cdf46a0592f67012f12eeb691283e92630a",
             "tzdb.dat": "efd50399b2f1c4de9063a6e761b98101026e9eacd8ec879201eeaaf6c1ef04ec",
             "tzmappings": "1c56fc9d9d82e1f023527c363840d6484fab264463246da6bee625698aa6bfe3"
           }
