@@ -31,7 +31,8 @@ data class Dict(
 
 const val updateHost = "https://ddtv-upgrade-fishmagic.pages.dev/releases/"
 
-val whiteListFile = listOf(".type", "config.json")
+val whiteListFile = listOf(".type", "config.json", "DDTV_Upgrader", "DDTV_Upgrader.bat")
+val whiteListDict = listOf("lib")
 
 @OptIn(ExperimentalSerializationApi::class)
 fun main(args: Array<String>) {
@@ -151,9 +152,11 @@ suspend fun checkUpdateFile(
     localDict.file.forEach { (key, file) ->
       val remoteFile = remoteDict.file[key]
       val fileName = "$dictName$key"
-      if (remoteFile == null && file !in whiteListFile) {
-        File(dictName, file).delete()
-        println("已删除$fileName")
+      if (remoteFile == null) {
+        if (fileName !in whiteListFile) {
+          File(dictName, file).delete()
+          println("已删除$fileName")
+        }
       } else {
         if (file == remoteFile) {
           remoteDict.file.remove(key)
@@ -165,9 +168,12 @@ suspend fun checkUpdateFile(
     }
     localDict.dict.forEach { (key, dict) ->
       val childRemoteDict = remoteDict.dict[key]
+      val childDictName = "$dictName$key/"
       if (childRemoteDict == null) {
-        File(dictName, dictName).delete()
-        println("已删除$dictName$key")
+        if (childDictName !in whiteListDict) {
+          File(dictName, dictName).delete()
+          println("已删除$dictName$key")
+        }
       } else {
         checkUpdateFile(childRemoteDict, dict, "$dictName$key/", updateMap)
         remoteDict.dict.remove(key)
