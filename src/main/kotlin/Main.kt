@@ -30,7 +30,7 @@ data class Dict(
 const val updateHost = "https://fishmagic.github.io/DDTV_Updater/releases/"
 
 val whiteListFile = listOf(".type", "config.json", "DDTV_Upgrader", "DDTV_Upgrader.bat")
-val whiteListDict = listOf("lib", "log")
+val whiteListDict = listOf("lib/", "log/")
 
 @OptIn(ExperimentalSerializationApi::class)
 fun main(args: Array<String>) {
